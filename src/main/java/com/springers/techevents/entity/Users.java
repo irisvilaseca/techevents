@@ -18,6 +18,7 @@ public class Users implements Serializable {
 
     @Serial private static final long serialVersionUID = 1L;
 
+
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
@@ -34,5 +35,22 @@ public class Users implements Serializable {
 
     public String getUser(){return usuario;}
 
-    public String getPassword(){return contraseña;}
+    public String getPassword(){return contrasena;}
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setUser(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public void setPassword(String contrasena) {
+        this.contrasena = contrasena;
+    }
+
 }
