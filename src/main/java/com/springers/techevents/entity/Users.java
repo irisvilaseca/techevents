@@ -6,6 +6,10 @@ import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
+<<<<<<< HEAD
+=======
+import java.util.List;
+>>>>>>> 8d2644607906abf0d0315742437493c4fbd48a00
 
 
 @Entity
@@ -22,7 +26,13 @@ public class Users implements Serializable {
     private String contrasena;
 
     @ManyToMany
-    @JoinColumn(name = "")
     private Events events;
 
+    public Long getId (){return id;}
+
+    public String getEmail(){return email;}
+
+    public String getUser(){return usuario;}
+
+    public String getPassword(){return contraseña;}
 }
