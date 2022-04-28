@@ -6,10 +6,7 @@ import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
-<<<<<<< HEAD
-=======
 import java.util.List;
->>>>>>> 8d2644607906abf0d0315742437493c4fbd48a00
 
 
 @Entity
@@ -53,4 +50,16 @@ public class Users implements Serializable {
         this.contrasena = contrasena;
     }
 
+    @Override
+    public String toString() {
+        return "Users{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", usuario='" + usuario + '\'' +
+                ", contrasena='" + contrasena + '\'' +
+                ", events=" + events +
+                '}';
+    }
 }
+
+
