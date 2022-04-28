@@ -10,12 +10,31 @@ import java.util.List;
 @Service
 public class EventServiceImpl implements IEventService{
 
-    @Autowired
-    private EventRepository eventRepository;
+    private final EventRepository eventRepository;
 
-    @Override
-    public List<Events> listaEventos() {
-        return (List<Events>) eventRepository.findAll();
+    @Autowired
+    public EventServiceImpl(EventRepository eventRepository) {
+        this.eventRepository = eventRepository;
     }
 
+
+    @Override
+    public List<Events> listarTodos() {
+        return null;
+    }
+
+    @Override
+    public void guardar(Events event) {
+
+    }
+
+    @Override
+    public Events buscarPorId(Long id) {
+        return null;
+    }
+
+    @Override
+    public void eliminar(Long id) {
+
+    }
 }
