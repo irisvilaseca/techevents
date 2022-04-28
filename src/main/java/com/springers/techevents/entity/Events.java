@@ -91,4 +91,18 @@ public class Events implements Serializable
     public void setUsers(List<Users> users) {
         this.users = users;
     }
+
+    @Override
+    public String toString() {
+        return "Events{" +
+                "id=" + id +
+                ", featured=" + featured +
+                ", max_participants=" + max_participants +
+                ", name='" + name + '\'' +
+                ", date='" + date + '\'' +
+                ", description='" + description + '\'' +
+                ", image='" + image + '\'' +
+                ", users=" + users +
+                '}';
+    }
 }
