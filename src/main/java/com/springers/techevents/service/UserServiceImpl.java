@@ -11,31 +11,31 @@ public class UserServiceImpl implements IUserService
     private final UserRepository repo;
 
     @Autowired
-    public UserService(UserRepository repo)
+    public UserServiceImpl(UserRepository repo)
     {
         this.repo = repo;
     }
 
     @Override
-    public List<Users> all()
+    public List<Users> listarTodos()
     {
         return (List<Users>) repo.findAll();
     }
 
     @Override
-    public void set(Users user)
+    public void guardar(Users user)
     {
         repo.save(user);
     }
 
     @Override
-    public Users get(Long id)
+    public Users buscarPorId(Long id)
     {
-        return repo.findById(id).orElse(null);
+        return (Users) repo.findById(id).orElse(null);
     }
 
     @Override
-    public void delete(Long id)
+    public void eliminar(Long id)
     {
         repo.deleteById(id);
     }
