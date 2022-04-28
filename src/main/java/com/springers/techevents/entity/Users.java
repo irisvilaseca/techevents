@@ -24,7 +24,7 @@ public class Users implements Serializable {
     private String contrasena;
 
     @ManyToMany
-    private Events events;
+    private List<Events> events;
 
     public Long getId (){return id;}
 
