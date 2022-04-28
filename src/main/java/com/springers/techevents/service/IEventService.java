@@ -10,7 +10,7 @@ public interface IEventService {
 
     public List<Events> listarTodos();
     public void guardar(Events event);
-    public Events bucarPorId(Long id);
+    public Events buscarPorId(Long id);
     public void eliminar(Long id);
 
 }
