@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class EventController {
-    @GetMapping("/views/events")
+    @GetMapping("/events")
     public String load()
     {
         return "";
