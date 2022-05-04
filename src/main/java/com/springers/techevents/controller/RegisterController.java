@@ -22,13 +22,13 @@ public class RegisterController
     }
 
     @PostMapping("/register")
-    public String register(@ModelAttribute("registrarse") NewUser user)
+    public String register(@ModelAttribute("registrarse") NewUser user, Model model)
     {
         if(user.getUsuario().length() < 4)
         {
-            //mandar error
+            model.addAttribute("Error","El nombre de usuario debe tener por lo menos 4 carácteres");//mandar error
+        //Falta poner un label de error en el html
         }
-        //mas comprobaciones...
         else
         {
             Users u = new Users();
