@@ -3,6 +3,7 @@ package com.springers.techevents.controller;
 import com.springers.techevents.entity.Events;
 import com.springers.techevents.entity.Users;
 import com.springers.techevents.service.EventServiceImpl;
+import com.springers.techevents.service.IEventService;
 import com.springers.techevents.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

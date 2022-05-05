@@ -40,6 +40,7 @@ public class RegisterController
             u.setUser(user.getUsuario());
             servicio.guardar(u);
         }
+        return "/templates/user/frmCrearUser";
     }
     @GetMapping("/register/delete/{id}")
     public String eliminar(@PathVariable("id") Long idUser) {
