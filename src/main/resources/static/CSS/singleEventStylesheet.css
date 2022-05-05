@@ -45,7 +45,6 @@ header
     width: 36vw;
     height: auto;
 }
-
 #searchimg
 {
     width: 4vw;
@@ -70,20 +69,46 @@ header
     font-size: 2vw;
     font-family: 'Bungee', cursive;
 }
-
-.article {  display: grid;
+.article {
+  background-color:#EBFBFF;
+  display: grid;
   grid-template-columns: 0.1fr 1fr 1fr 0.1fr;
   grid-template-rows: 0.2fr 1.5fr 0.2fr;
   gap: 2em 4em;
-  grid-auto-flow: row;
+  grid-template-areas:
+    ". . . ."
+    ". Image Description ."
+    ". . . .";
   justify-content: space-around;
   align-content: space-around;
   justify-items: center;
   align-items: center;
-  grid-template-areas:
-    ". . . ."
-    ". . . ."
-    ". . . .";
   width: 100%;
   height: 100%;
+}
+.image-container {
+  grid-area: Image;
+  width: 70%;
+  height: 55%;
+}
+#image{
+width:32em;
+height:32em;
+max-width:100%;
+max-height:100%;
+}
+.description-container {
+  grid-area: Description;
+  text-align:center;
+  width: 70%;
+  height: 55%;
+  font-family: 'Inter', sans-serif;
+}
+#name{
+    font-size:3em;
+}
+.btn{
+    background-color: #7267CB;
+    border:none;
+    border-radius: 43px;
 }
