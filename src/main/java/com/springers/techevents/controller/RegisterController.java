@@ -37,6 +37,7 @@ public class RegisterController
             u.setUser(user.getUsuario());
             servicio.guardar(u);
         }
+        return "/templates/user/frmCrearUser";
     }
 
 
