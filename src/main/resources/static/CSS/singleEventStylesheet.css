@@ -101,11 +101,13 @@ header
     background-color: #E5E5E5;
     height:6.25rem;
     width:26.45rem;
-    vertical-align:middle;
+    align-items:center;
 }
 #max_participants{
     font-family: 'Inter', sans-serif;
+    font-size:1.5vw;
     text-align:center;
+    line-height:6rem;
 }
 .description-container {
   grid-area: Description;
