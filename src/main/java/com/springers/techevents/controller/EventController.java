@@ -40,13 +40,25 @@ public class EventController {
         System.out.println("Evento guardado con éxito!");
         return "redirect:/clientes/";
     }
+
     @GetMapping("/events/delete/{id}")
     public String eliminar(@PathVariable("id") Long idEvents) {
 
         eventService.eliminar(idEvents);
         System.out.println("Evento eliminado con exito");
-
-        return "redirect:/views/events/"; //falta acabar la ruta
+        return null;
     }
 
+    @GetMapping("/events/edit/{id}")
+    public String guardar(@PathVariable("id") Long idEvents,@ModelAttribute Events event, Model model){
+
+        model.addAttribute("name","Formulario: Editar Evento");
+        model.addAttribute("date");
+        model.addAttribute("description");
+        model.addAttribute("image");
+        System.out.println("Hubo errores en el formulario");
+        eventService.guardar(event);
+        System.out.println("Evento guardado con éxito!");
+        return "redirect:/clientes/"; // falta agregar ruta
+    }
 }
