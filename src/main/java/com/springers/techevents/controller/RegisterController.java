@@ -3,15 +3,18 @@ package com.springers.techevents.controller;
 import com.springers.techevents.entity.NewUser;
 import com.springers.techevents.entity.Users;
 import com.springers.techevents.service.UserServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class RegisterController
 {
+    @Autowired
     private UserServiceImpl servicio;
 
     @GetMapping("/register")
@@ -37,6 +40,14 @@ public class RegisterController
             u.setUser(user.getUsuario());
             servicio.guardar(u);
         }
+    }
+    @GetMapping("/register/delete/{id}")
+    public String eliminar(@PathVariable("id") Long idUser) {
+
+        servicio.eliminar(idUser);
+        System.out.println("Usuario eliminado con exito");
+
+        return "redirect:/views/events/"; //falta acabar la ruta
     }
 
 
