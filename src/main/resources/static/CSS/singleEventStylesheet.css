@@ -92,10 +92,20 @@ header
   height: 55%;
 }
 #image{
-width:32em;
-height:32em;
-max-width:100%;
-max-height:100%;
+    width:32rem;
+    height:32rem;
+    max-width:100%;
+    max-height:100%;
+}
+#participants-container{
+    background-color: #E5E5E5;
+    height:6.25rem;
+    width:26.45rem;
+    vertical-align:middle;
+}
+#max_participants{
+    font-family: 'Inter', sans-serif;
+    text-align:center;
 }
 .description-container {
   grid-area: Description;
