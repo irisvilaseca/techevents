@@ -133,4 +133,8 @@ header
     background-color: #7267CB;
     border:none;
     border-radius: 43px;
+    font-size:2em;
+}
+.btn:hover{
+    background-color:#6E3CBC;
 }
