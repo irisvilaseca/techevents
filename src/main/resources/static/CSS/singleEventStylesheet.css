@@ -97,6 +97,16 @@ header
     max-width:100%;
     max-height:100%;
 }
+.date-container{
+    align:center;
+    position:absolute;
+    margin:auto;
+    justify-content:center;
+}
+#date{
+    text-align:center;
+    margin:auto;
+}
 #participants-container{
     background-color: #E5E5E5;
     height:6.25rem;
