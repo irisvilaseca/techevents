@@ -1,0 +1,40 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+header
+{
+    margin-top: 2vh;
+    margin-left: 5vw;
+    width: 90vw;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#logo
+{
+    margin: auto;
+    width: 12vw;
+    height: auto;
+}
+
+#login
+{
+    color: black;
+    margin: auto;
+    width: 15vw;
+    height: auto;
+    font-size: 2.5vw;
+    font-family: 'Bungee', cursive;
+    white-space: pre;
+    text-decoration: none;
+}
+
+#login:hover
+{
+    color: aqua;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Evento</title>
+    <link th:href="@{/CSS/singleEventStylesheet.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+</head>
+<body>
+<header th:fragment="header">
+    <a th:href="@{/}">
+        <img th:src="@{/img/Logo.png}" alt="Logo de tech events" id="logo">
+    </a>
+    <section id="search">
+        <img th:src="@{/img/Search.png}" alt="Imagen de búsqueda" id="searchimg">
+        <input type="text" placeholder="Buscar..." id="searchinput">
+    </section>
+    <a th:href="@{/login}" id="login">Iniciar
+        Sesión</a>
+</header>
+
+</body>
+</html>
