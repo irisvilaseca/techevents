@@ -22,9 +22,12 @@ public class EventController {
     private EventServiceImpl eventService;
     private UserServiceImpl service;
     @GetMapping("/events")
-    public String load()
+    public String load(Model model)
     {
-        return "";
+       Events evento1 = eventService.buscarPorId(1l);
+        System.out.println(evento1.toString());
+        model.addAttribute("eventoPrueba",evento1);
+        return "views/events/singleEvent";
     }
     @PostMapping("/events/create")
     public String guardar(@ModelAttribute Events event, BindingResult result, Model model){

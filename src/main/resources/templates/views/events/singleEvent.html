@@ -3,23 +3,24 @@
 <head th:replace="plantilla/singleEvent.temp :: head">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Evento</title>
 </head>
 <body>
 <header th:replace="plantilla/singleEvent.temp :: header">
 </header>
-<div class="container">
-    <div class="row justify-content-center">
-
-        <div class="col-md-6">
-
-        </div>
-
-        <div class="col-md-6">
-
-        </div>
-
+<div class="article">
+    <p th:text="${eventoPrueba.image}"></p>
+    <div class="image-container">
+            <img class="card-img-top" id="image" src="/img/evento1.jpeg">
+            <div class="participants_container" id="participants-container"><p id="max_participants">5 of 20 participants</p></div>
     </div>
+    <div class="description-container">
+        <h3 id="name">Título</h3>
+        <p id="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <button type="button" class="btn btn-primary">Apuntarse</button>
+    </div>
+</div>
 </div>
 </body>
 </html>
