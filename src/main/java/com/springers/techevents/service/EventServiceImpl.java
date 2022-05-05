@@ -37,4 +37,7 @@ public class EventServiceImpl implements IEventService{
     public void eliminar(Long id) {
 
     }
+
+    public void editar(Events event) {
+    }
 }

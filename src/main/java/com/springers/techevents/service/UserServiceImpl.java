@@ -39,4 +39,7 @@ public class UserServiceImpl implements IUserService
     {
         repo.deleteById(id);
     }
+
+    public void editar(Users user) {
+    }
 }

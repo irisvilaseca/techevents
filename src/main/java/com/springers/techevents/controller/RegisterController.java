@@ -51,15 +51,15 @@ public class RegisterController
         return "redirect:/views/events/"; //falta acabar la ruta
     }
     @GetMapping("/register/edit/{id}")
-    public String guardar(@PathVariable("id") Long idUser, @ModelAttribute Users user, Model model){
+    public String editar(@PathVariable("id") Long idUser, @ModelAttribute Users user, Model model){
 
         model.addAttribute("name","Formulario: Editar usuario");
         model.addAttribute("date");
         model.addAttribute("description");
         model.addAttribute("image");
         System.out.println("Hubo errores en el formulario");
-        servicio.guardar(user);
-        System.out.println("Usuario editado con éxito!");
+        servicio.editar(user);
+      System.out.println("Usuario editado con éxito!");
         return "redirect:/clientes/"; // falta agregar ruta
     }
 }

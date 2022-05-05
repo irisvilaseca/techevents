@@ -50,14 +50,14 @@ public class EventController {
     }
 
     @GetMapping("/events/edit/{id}")
-    public String guardar(@PathVariable("id") Long idEvents,@ModelAttribute Events event, Model model){
+    public String editar(@PathVariable("id") Long idEvents,@ModelAttribute Events event, Model model){
 
         model.addAttribute("name","Formulario: Editar Evento");
         model.addAttribute("date");
         model.addAttribute("description");
         model.addAttribute("image");
         System.out.println("Hubo errores en el formulario");
-        eventService.guardar(event);
+        eventService.editar(event);
         System.out.println("Evento guardado con éxito!");
         return "redirect:/clientes/"; // falta agregar ruta
     }
