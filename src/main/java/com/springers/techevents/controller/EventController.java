@@ -23,7 +23,7 @@ public class EventController {
     @GetMapping("/events")
     public String load()
     {
-        return "";
+        return "views/events/singleEvent";
     }
     @PostMapping("/events/create")
     public String guardar(@ModelAttribute Events event, BindingResult result, Model model){

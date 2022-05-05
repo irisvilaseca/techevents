@@ -17,7 +17,6 @@ header
 
 #logo
 {
-    margin: auto;
     width: 12vw;
     height: auto;
 }
@@ -25,12 +24,12 @@ header
 #login
 {
     color: black;
-    margin: auto;
-    width: 15vw;
+    width: 25vw;
     height: auto;
     font-size: 2.5vw;
     font-family: 'Bungee', cursive;
-    white-space: pre;
+    text-align:center;
+    white-space:pre;
     text-decoration: none;
 }
 
@@ -38,6 +37,40 @@ header
 {
     color: aqua;
 }
+#search
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36vw;
+    height: auto;
+}
+
+#searchimg
+{
+    width: 4vw;
+    height: auto;
+}
+
+#searchinput
+{
+    margin-left: 1vw;
+    width: 20vw;
+    height: auto;
+    font-size: 2vw;
+    font-family: 'Bungee', cursive;
+    border-style: none;
+}
+
+#searchinput::placeholder
+{
+    margin-left: 1vw;
+    width: 20vw;
+    height: auto;
+    font-size: 2vw;
+    font-family: 'Bungee', cursive;
+}
+
 .article {  display: grid;
   grid-template-columns: 0.1fr 1fr 1fr 0.1fr;
   grid-template-rows: 0.2fr 1.5fr 0.2fr;
