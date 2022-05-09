@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -20,10 +21,10 @@ public class EventController {
     @Autowired
     private EventServiceImpl eventService;
     private UserServiceImpl service;
-    @GetMapping("/events")
-    public String load(Model model)
+    @GetMapping("/events/{eventId}")
+    public String load(@PathVariable Long eventId, Model model)
     {
-       Events evento1 = eventService.buscarPorId(1l);
+       Events evento1 = eventService.buscarPorId(eventId);
         System.out.println(evento1.toString());
         model.addAttribute("eventoPrueba",evento1);
         return "views/events/singleEvent";
