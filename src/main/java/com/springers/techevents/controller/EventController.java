@@ -22,7 +22,7 @@ public class EventController {
     private EventServiceImpl eventService;
     private UserServiceImpl service;
     @GetMapping("/events/{eventId}")
-    public String load(@PathVariable Long eventId, Model model)
+    public String loadById(@PathVariable Long eventId, Model model)
     {
        Events evento1 = eventService.buscarPorId(eventId);
         System.out.println(evento1.toString());
