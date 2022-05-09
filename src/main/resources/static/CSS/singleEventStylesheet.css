@@ -98,12 +98,15 @@ header
     max-height:100%;
 }
 .date-container{
-    align:center;
+    display:flex;
+    align-items:center;
     position:absolute;
-    margin:auto;
     justify-content:center;
 }
 #date{
+    background-color: rgba(196, 196, 196, 0.65);
+    font-size:4vh;
+    align-self:center;
     text-align:center;
     margin:auto;
 }
