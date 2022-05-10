@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head th:replace="plantilla/template :: head">
+<head th:replace="plantilla/techeventsTemplate :: head">
     <meta charset="UTF-8">
     <title>HomePage</title>
 </head>
 <body>
-<header th:replace="plantilla/template::header">
+<header th:replace="plantilla/techeventsTemplate::header">
     <img class="" src="" alt="">
 </header>
 <nav class="menu">
@@ -34,9 +34,9 @@
     <div class=""><img src="" alt=""></div>
     <div class=""><img src="" alt=""></div>
 </section>
+<p th:text="${events}"></p>
 
-
-<footer th:replace="plantilla/template :: footer">
+<footer th:replace="plantilla/techeventsTemplate :: footer">
     <p>©Copyright</p>
     <p>Pedir ayuda</p>
     <p>Registrarse</p>

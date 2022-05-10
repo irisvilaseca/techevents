@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class Events implements Serializable
+public class Events<name> implements Serializable
 {
     @Serial
     private static final long serialVersionUID = 1L;
@@ -26,7 +26,7 @@ public class Events implements Serializable
 
     public long getSerialVersionUID() {
         return serialVersionUID;
-    }
+    };
 
     public Long getId() {
         return id;
@@ -105,4 +105,6 @@ public class Events implements Serializable
                 ", users=" + users +
                 '}';
     }
+
+
 }
