@@ -16,7 +16,6 @@ public class EventServiceImpl implements IEventService {
 
     private final EventRepository eventRepository;
 
-    @Autowired
     public EventServiceImpl(EventRepository eventRepository) {
         this.eventRepository = eventRepository;
     }
@@ -24,24 +23,26 @@ public class EventServiceImpl implements IEventService {
 
     @Override
     public List<Events> listarTodos() {
-        return eventRepository.findAll();
 
+        return (List<Events>) eventRepository.findAll();
     }
 
     @Override
     public void guardar(Events event) {
-        return eventRepository.save();
+         eventRepository.save(event);
     }
+
 
     @Override
     public Events buscarPorId(Long id) {
-        return eventRepository.getById();
+
+        return eventRepository.findById(id).orElseThrow(RuntimeException::new);
     }
 
     @Override
     public void eliminar(Long id) {
-        return eventRepository.deleteAllById();
 
+        eventRepository.deleteById(id);
     }
 
 
