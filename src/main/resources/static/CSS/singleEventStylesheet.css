@@ -141,3 +141,6 @@ header
 .btn:hover{
     background-color:#6E3CBC;
 }
+.container-fluid{
+    background-color: #98BAE7;
+}
