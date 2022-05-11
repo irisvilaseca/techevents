@@ -26,6 +26,7 @@ public class EventController {
     public String loadById(@PathVariable Long eventId, Model model) {
         Events evento1 = eventService.buscarPorId(eventId);
         model.addAttribute("eventoPrueba", evento1);
+        model.addAttribute("evento",new Events());
         return "views/events/singleEvent";
     }
 
@@ -54,6 +55,18 @@ public class EventController {
         System.out.println("Evento guardado con éxito!");
         return "redirect:/clientes/";
     }
+    /*
+    @GetMapping("/event/{id}/edit")
+    public String edit(@PathVariable Long id){
+        Events evento=eventService.buscarPorId(id);
+        evento.setDate();
+        evento.setName();
+        evento.setDescription();
+        evento.setImage();
+        evento.setMax_participants();
+        evento.setFeatured();
+        return "redirect:/event/"+id.toString();
+    }*/
 
     @PutMapping("/event/{id}/book")
     public Events updateEventsreturn(@PathVariable Long id, @RequestParam(value = "events") String Events) {
