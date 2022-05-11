@@ -18,7 +18,7 @@ public class RegisterController
     public String load(Model model)
     {
         model.addAttribute("registrarse", new NewUser());
-        return "";//agregar el html
+        return "views/signup";//agregar el html
     }
 
     @PostMapping("/register")
