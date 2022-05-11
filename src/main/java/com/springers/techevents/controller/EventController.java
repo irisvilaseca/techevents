@@ -11,10 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @Controller
@@ -22,15 +20,15 @@ public class EventController {
     @Autowired
     private EventServiceImpl eventService;
     private UserServiceImpl service;
+    private EventRepository eventRepository;
 
     @GetMapping("/events/{eventId}")
-    public String loadById(@PathVariable Long eventId, Model model)
-    {
-       Events evento1 = eventService.buscarPorId(eventId);
-        model.addAttribute("eventoPrueba",evento1);
+    public String loadById(@PathVariable Long eventId, Model model) {
+        Events evento1 = eventService.buscarPorId(eventId);
+        model.addAttribute("eventoPrueba", evento1);
         return "views/events/singleEvent";
+    }
 
-    private Object EventsNotFoundException;
 
     @GetMapping("/events")
     public String loadAllEvents(Model model) {
@@ -59,15 +57,14 @@ public class EventController {
 
     @PutMapping("/event/{id}/book")
     public Events updateEventsreturn(@PathVariable Long id, @RequestParam(value = "events") String Events) {
-        Events events = eventRepository.findById(id).orElseThrow(eventsNotFoundException::new);
+        Events events = eventRepository.findById(id).orElseThrow(RuntimeException::new);
         return eventRepository.save(events);
 
     }
 
     @PutMapping("/movies/{id}/return")
-    public Events clearEventsExpired(@PathVariable Long id) {
-        Events events = eventRepository.findById(id).orElseThrow(eventsNotFoundException::new);
-        return eventRepository.deleteAll(events);
+    public void clearEventsExpired(@PathVariable Long id) {
+        eventRepository.deleteById(id);
     }
       
       

@@ -10,10 +10,10 @@
 </head>
 <body>
 <header th:fragment="header">
-    <a th:href="@{/}">
-        <img th:src="@{/images/Logo.png}" alt="Logo de tech events" id="logo">
+    <a th:href="@{/home}">
+        <img th:src="@{/img/Logo.png}" alt="Logo de tech events" id="logo">
     </a>
-    <a th:href="@{/signup}" id="signup">Registrarse</a>
+    <a th:href="@{/register}" id="signup">Registrarse</a>
 </header>
 <main th:fragment="main">
     <form id="loginform" action="#" th:action="@{/login}" method="post">
@@ -29,7 +29,7 @@
 </main>
 <footer th:fragment="footer">
     <h4 id="footercopy">&copy;TechEvents</h4>
-    <a id="footerhref" th:href="@{/signup}">
+    <a id="footerhref" th:href="@{/register}">
         <h4 id="footerinit">Registrarse</h4>
     </a>
 </footer>
