@@ -236,42 +236,9 @@ header
     display: none;
 }
 
-footer
-{
-    margin-top: 5vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100vw;
-    height: auto;
+.container-fluid{
+    background-color: #98BAE7;
 }
-
-#footercopy
-{
-    font-family: 'Bungee', cursive;
-    font-size: 1.4vw;
-    text-align: center;
-}
-
-#footerhref
-{
-    text-decoration: none;
-}
-
-#footerinit
-{
-    font-family: 'Bungee', cursive;
-    font-size: 1.4vw;
-    text-align: center;
-    white-space: pre;
-    color: black;
-}
-
-#footerinit:hover
-{
-    color: aqua;
-}
-
 @include media-breakpoint-up(md) {
 
 }
