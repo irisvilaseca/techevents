@@ -144,3 +144,8 @@ header
 .container-fluid{
     background-color: #98BAE7;
 }
+#admin-event-manager{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
