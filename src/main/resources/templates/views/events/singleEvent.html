@@ -9,7 +9,7 @@
 <body>
 <header th:replace="plantilla/singleEvent.temp :: header">
 </header>
-<div class="article">
+<div class="article" sec:authorize="hasRole('ROLE_USER')">
     <div class="image-container">
             <div class="date-container" id="date-container"><p id="date" th:text="${eventoPrueba.date}"></p></div>
             <img class="card-img-top" id="image" th:src="${eventoPrueba.image}">
@@ -19,7 +19,7 @@
         <h3 id="name" th:text="${eventoPrueba.name}"></h3>
         <p id="description" th:text="${eventoPrueba.description}">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
         <section sec:authorize="hasRole('ROLE_ADMIN')" id="admin-event-manager">
-            <button type="button" class="btn btn-primary btn-lg">Editar</button>
+            <button type="button" class="btn btn-primary btn-lg"><a th:href="/events/${eventoPrueba.id}/edit">Editar</a></button>
             <button type="button" class="btn btn-primary btn-lg">Eliminar</button>
         </section>
         <button type="button" class="btn btn-primary btn-lg" sec:authorize="hasRole('ROLE_USER')">Apuntarse</button>

@@ -6,12 +6,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
-    <link th:href="@{/css/signup.css}" rel="stylesheet">
+    <link th:href="@{/CSS/signup.css}" rel="stylesheet">
 </head>
 <body>
 <header th:fragment="header">
-    <a th:href="@{/}">
-        <img th:src="@{/images/Logo.png}" alt="Logo de tech events" id="logo">
+    <a th:href="@{/home}">
+        <img th:src="@{/img/Logo.png}" alt="Logo de tech events" id="logo">
     </a>
     <a th:href="@{/login}" id="login">Iniciar
         Sesión</a>
@@ -26,7 +26,7 @@
             <label class="signlabel">Contraseña</label>
             <input class="signinput" type="password" th:field="*{contrasena}">
             <label class="signlabel">Repetir Contraseña</label>
-            <input class="signinput" type="password" th:field="*{contrasenarepetida}">
+            <input class="signinput" type="password" th:field="*{contrasenaRepetida}">
             <label id="signerror" th:text="${error}"></label>
         </section>
         <button id="submit">Registrar</button>

@@ -36,6 +36,7 @@ public class Admin implements CommandLineRunner
         }
         List<Users> userss = users.listarTodos();
         for(Users u : userss)
-            System.out.println(u.getUser() + ", " + u.getEmail());
+            System.out.println(u.getUser() + ", " + u.getEmail()+ ", " + u.getPassword());
+    //547dbd6f-d5f1-45a7-87f9-305e40900072
     }
 }
