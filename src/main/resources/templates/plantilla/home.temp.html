@@ -27,10 +27,10 @@
     <img th:src="@{/img/LoginAdmin.png}" sec:authorize="hasRole('ROLE_ADMIN')" class="loginimg">
 </header>
 <main th:fragment="main">
-    <div th:each="ev:${fEvents}" id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" th:each="ev:${fEvents}" >
             <div class="carousel-item active">
-                <img th: src="${ev.image}" class="d-block w-100" alt="...">
+                <img th:src="${ev.image}" class="d-block w-100" alt=" ">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -41,14 +41,14 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
-    </divth>
-            <img id="featuredpimg">
-            <label id="featureddate"></label>
-            <div id="featuredcontrols">
-                <img id="previousfeatured" th:src="@{/img/nextprev.png}">
-                <img id="nextfeatured" th:src="@{/img/nextprev.png}">
-            </div>
-        </div>
+<!--    </divth>-->
+<!--            <img id="featuredpimg">-->
+<!--            <label id="featureddate"></label>-->
+<!--            <div id="featuredcontrols">-->
+<!--                <img id="previousfeatured" th:src="@{/img/nextprev.png}">-->
+<!--                <img id="nextfeatured" th:src="@{/img/nextprev.png}">-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
     <div id="eventss" th:style="'margin-right: 1vw; margin-top: 10vh; width: 99vw; display: grid; align-items: center; justify-items: center; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(' + ${raEvents} + ', 1fr);'">
         <div class="event" th:each="eve:${aEvents}">
