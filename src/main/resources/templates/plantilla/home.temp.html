@@ -27,17 +27,21 @@
     <img th:src="@{/img/LoginAdmin.png}" sec:authorize="hasRole('ROLE_ADMIN')" class="loginimg">
 </header>
 <main th:fragment="main">
-    <div id="featured">
-        <div th:each="ev:${fEvents}" th:style="'display: flex; justify-content: center; margin: 0; height: 28vh; width: calc(90vw / ' + ${nfEvents} + ');'">
-            <img class="imgev" th:src="${ev.image}"></a>
-        </div>
-    </div>
-    <div id="featuredp">
-        <div id="featuredpimgfl">
-            <div id="featurepimgeve" th:each="ev:${fEvents}">
-                <label class="featuredpimgevt"  th:value="${ev.date}"></label>
-                <img class="featuredpimgev" th:src="${ev.image}">
+    <div th:each="ev:${fEvents}" id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img th: src="${ev.image}" class="d-block w-100" alt="...">
             </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </divth>
             <img id="featuredpimg">
             <label id="featureddate"></label>
             <div id="featuredcontrols">
