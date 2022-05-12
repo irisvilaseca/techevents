@@ -36,7 +36,7 @@ public class Events<name> implements Serializable
         this.id = id;
     }
 
-    public boolean isFeatured() {
+    public boolean getFeatured() {
         return featured;
     }
 

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="en">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link th:href="@{/CSS/home.css}" rel="stylesheet">
+    <script defer type="text/javascript" th:src="@{/JS/home.js}"></script>
+</head>
+<body>
+<header th:fragment="header">
+    <a th:href="@{/home}">
+        <img th:src="@{/img/Logo.png}" alt="Logo de tech events" id="logo">
+    </a>
+    <section id="search">
+        <img th:src="@{/img/Search.png}" alt="Imagen de búsqueda" id="searchimg">
+        <input type="text" placeholder="Buscar..." id="searchinput">
+    </section>
+    <a th:href="@{/events}" sec:authorize="isAuthenticated()" id="events">Mis Eventos</a>
+    <a th:href="@{/create}" sec:authorize="hasRole('ROLE_ADMIN')" id="create">Crear</a>
+    <a th:href="@{/logout}" sec:authorize="isAuthenticated()" id="logout">Cerrar Sesión</a>
+    <a th:href="@{/login}" sec:authorize="!isAuthenticated()" id="login">Iniciar
+        Sesión</a>
+    <img th:src="@{/img/Login.png}" sec:authorize="hasRole('ROLE_USER')" class="loginimg">
+    <img th:src="@{/img/LoginAdmin.png}" sec:authorize="hasRole('ROLE_ADMIN')" class="loginimg">
+</header>
+<main th:fragment="main">
+    <div id="featured">
+        <div th:each="ev:${fEvents}" th:style="'display: flex; justify-content: center; margin: 0; height: 28vh; width: calc(90vw / ' + ${nfEvents} + ');'">
+            <img class="imgev" th:src="${ev.image}"></a>
+        </div>
+    </div>
+    <div id="featuredp">
+        <div id="featuredpimgfl">
+            <div id="featurepimgeve" th:each="ev:${fEvents}">
+                <label class="featuredpimgevt"  th:value="${ev.date}"></label>
+                <img class="featuredpimgev" th:src="${ev.image}">
+            </div>
+            <img id="featuredpimg">
+            <label id="featureddate"></label>
+            <div id="featuredcontrols">
+                <img id="previousfeatured" th:src="@{/img/nextprev.png}">
+                <img id="nextfeatured" th:src="@{/img/nextprev.png}">
+            </div>
+        </div>
+    </div>
+    <div id="eventss" th:style="'margin-right: 1vw; margin-top: 10vh; width: 99vw; display: grid; align-items: center; justify-items: center; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(' + ${raEvents} + ', 1fr);'">
+        <div class="event" th:each="eve:${aEvents}">
+            <img class="eventimg" th:src="${eve.image}">
+        </div>
+    </div>
+    <div id="eventsp">
+        <div class="eventp" th:each="eve:${aEvents}">
+            <img class="eventpimg" th:src="${eve.image}">
+        </div>
+    </div>
+</main>
+<footer th:fragment="footer">
+    <h4 id="footercopy">&copy;TechEvents</h4>
+    <a id="footerhref" th:href="@{/login}">
+        <h4 id="footerinit">Iniciar
+            Sesión</h4>
+    </a>
+</footer>
+</body>
+</html>
