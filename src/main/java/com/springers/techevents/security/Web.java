@@ -16,9 +16,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)
 public class Web extends WebSecurityConfigurerAdapter
 {
-    private AccessDenied denied;
+    private final AccessDenied denied;
 
-    private UserServiceImpl users;
+    private final UserServiceImpl users;
 
     public Web(AccessDenied denied, UserServiceImpl users)
     {
