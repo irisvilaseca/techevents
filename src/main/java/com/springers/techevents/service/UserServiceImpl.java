@@ -2,15 +2,20 @@ package com.springers.techevents.service;
 
 import com.springers.techevents.entity.Users;
 import com.springers.techevents.repository.UserRepository;
+import com.springers.techevents.security.Role;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public class UserServiceImpl implements IUserService
+@Service
+public class UserServiceImpl implements IUserService, UserDetailsService
 {
     private final UserRepository repo;
 
-    @Autowired
     public UserServiceImpl(UserRepository repo)
     {
         this.repo = repo;
@@ -40,6 +45,28 @@ public class UserServiceImpl implements IUserService
         repo.deleteById(id);
     }
 
+
     public void editar(Users user) {
+    
+    }
+
+    public boolean exists(Role role)
+    {
+        List<Users> users = listarTodos();
+        for(Users u : users)
+            if(u.getRole() == Role.ROLE_ADMIN)
+                return true;
+        return false;
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException
+    {
+        List<Users> users = listarTodos();
+        for (Users u : users)
+            if(u.getUser().equals(username) || u.getEmail().equals(username))
+                return u;
+        throw new UsernameNotFoundException("No hay ningun usuario con el nombre o email " + username);
+
     }
 }

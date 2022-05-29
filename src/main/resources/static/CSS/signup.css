@@ -1,0 +1,155 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+header
+{
+    margin-top: 2vh;
+    margin-left: 5vw;
+    width: 90vw;
+    height: auto;
+    display: grid;
+    align-items: center;
+    justify-content: space-around;
+    grid-template-columns: 1fr 1fr;
+}
+
+#logo
+{
+    margin: auto;
+    width: 12vw;
+    height: auto;
+}
+
+#login
+{
+    color: black;
+    margin: auto;
+    width: 15vw;
+    height: auto;
+    font-size: 2.5vw;
+    font-family: 'Bungee', cursive;
+    white-space: pre;
+    text-decoration: none;
+}
+
+#login:hover
+{
+    color: aqua;
+}
+
+main
+{
+    background-color: #98BAE7;
+    width: 100vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#signform
+{
+    background-color: #7267CB;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    width: 70vw;
+    height: 50vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 3fr 1fr;
+    border-radius: 5vw 5vh;
+}
+
+#signfields
+{
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    flex-direction: column;
+}
+
+.signlabel
+{
+    color: white;
+    text-align: left;
+    font-size: 2.5vh;
+    width: 15vw;
+    height: auto;
+    margin-left: 2vw;
+}
+
+.signinput
+{
+    border: 0;
+    box-shadow: none;
+    background-color: #98BAE7;
+    border-radius: 7vw 7vw;
+    width: 40vw;
+    height: 5vh;
+    margin-bottom: 2vh;
+    margin-left: 2vw;
+    font-size: 2.7vh;
+}
+
+#signerror
+{
+    width: 30vw;
+    height: auto;
+    margin-left: 2vw;
+    font-size: 1.7vw;
+    color: red;
+}
+
+#submit
+{
+    border: 0;
+    box-shadow: none;
+    background-color: #D954EF;
+    width: 15vw;
+    height: 5vh;
+    font-size: 2.5vh;
+    text-align: center;
+    border-radius: 5vw 5vw;
+    align-self: flex-end;
+    justify-self: center;
+    margin-bottom: 5vh;
+}
+
+footer
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    height: auto;
+}
+
+#footercopy
+{
+    font-family: 'Bungee', cursive;
+    font-size: 1.4vw;
+    text-align: center;
+}
+
+#footerhref
+{
+    text-decoration: none;
+}
+
+#footerinit
+{
+    font-family: 'Bungee', cursive;
+    font-size: 1.4vw;
+    text-align: center;
+    white-space: pre;
+    color: black;
+}
+
+#footerinit:hover
+{
+    color: aqua;
+}

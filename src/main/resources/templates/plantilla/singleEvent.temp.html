@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="en">
 <head th:fragment="head">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,5 +25,18 @@
     <a th:href="@{/login}" id="login">Iniciar Sesión</a>
 </header>
 <div class="article"></div>
+<footer th:fragment="footer">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar-footer">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav mx-auto d-flex justify-content-center">
+                <a class="nav-link active" aria-current="page" href="#">&copy; TechEvents</a>
+                <a class="nav-link" href="#">Pedir ayuda:techevents@gmail.com</a>
+                <a class="nav-link" href="/register">Registrarse</a>
+            </div>
+        </div>
+    </div>
+</nav>
+</footer>
 </body>
 </html>
