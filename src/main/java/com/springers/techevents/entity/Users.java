@@ -37,6 +37,10 @@ public class Users implements Serializable, UserDetails {
     @ManyToMany
     private List<Events> events;
 
+    public static Users save(Users events) {
+        return null;
+    }
+
     public Long getId (){return id;}
 
     public String getEmail(){return email;}
@@ -104,6 +108,12 @@ public class Users implements Serializable, UserDetails {
                 ", contrasena='" + contrasena + '\'' +
                 ", events=" + events +
                 '}';
+    }
+
+    public void setBook(boolean b) {
+    }
+
+    public void setRenter(String renter) {
     }
 }
 

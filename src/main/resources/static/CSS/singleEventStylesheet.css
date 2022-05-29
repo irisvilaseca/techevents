@@ -17,7 +17,6 @@ header
 
 #logo
 {
-    margin: auto;
     width: 12vw;
     height: auto;
 }
@@ -25,12 +24,12 @@ header
 #login
 {
     color: black;
-    margin: auto;
-    width: 15vw;
+    width: 25vw;
     height: auto;
     font-size: 2.5vw;
     font-family: 'Bungee', cursive;
-    white-space: pre;
+    text-align:center;
+    white-space:pre;
     text-decoration: none;
 }
 
@@ -38,19 +37,110 @@ header
 {
     color: aqua;
 }
-.article {  display: grid;
+#search
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36vw;
+    height: auto;
+}
+#searchimg
+{
+    width: 4vw;
+    height: auto;
+}
+
+#searchinput
+{
+    margin-left: 1vw;
+    width: 20vw;
+    height: auto;
+    font-size: 2vw;
+    font-family: 'Bungee', cursive;
+    border-style: none;
+}
+
+#searchinput::placeholder
+{
+    margin-left: 1vw;
+    width: 20vw;
+    height: auto;
+    font-size: 2vw;
+    font-family: 'Bungee', cursive;
+}
+.article {
+  background-color:#EBFBFF;
+  display: grid;
   grid-template-columns: 0.1fr 1fr 1fr 0.1fr;
   grid-template-rows: 0.2fr 1.5fr 0.2fr;
   gap: 2em 4em;
-  grid-auto-flow: row;
+  grid-template-areas:
+    ". . . ."
+    ". Image Description ."
+    ". . . .";
   justify-content: space-around;
   align-content: space-around;
   justify-items: center;
   align-items: center;
-  grid-template-areas:
-    ". . . ."
-    ". . . ."
-    ". . . .";
   width: 100%;
   height: 100%;
+}
+.image-container {
+  grid-area: Image;
+  width: 70%;
+  height: 55%;
+}
+#image{
+    width:32rem;
+    height:32rem;
+    max-width:100%;
+    max-height:100%;
+}
+.date-container{
+    display:flex;
+    align-items:center;
+    position:absolute;
+    justify-content:center;
+}
+#date{
+    background-color: rgba(196, 196, 196, 0.65);
+    font-size:4vh;
+    align-self:center;
+    text-align:center;
+    margin:auto;
+}
+#participants-container{
+    background-color: #E5E5E5;
+    height:6.25rem;
+    width:26.45rem;
+    align-items:center;
+}
+#max_participants{
+    font-family: 'Inter', sans-serif;
+    font-size:1.5vw;
+    text-align:center;
+    line-height:6rem;
+}
+.description-container {
+  grid-area: Description;
+  text-align:center;
+  width: 70%;
+  height: 55%;
+  font-family: 'Inter', sans-serif;
+}
+#name{
+    font-size:3em;
+}
+.btn{
+    background-color: #7267CB;
+    border:none;
+    border-radius: 43px;
+    font-size:2em;
+}
+.btn:hover{
+    background-color:#6E3CBC;
+}
+.container-fluid{
+    background-color: #98BAE7;
 }
