@@ -2,6 +2,9 @@ package com.springers.techevents.security;
 
 import com.springers.techevents.entity.Users;
 import com.springers.techevents.service.UserServiceImpl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
@@ -12,7 +15,9 @@ import java.util.UUID;
 @Component
 public class Admin implements CommandLineRunner
 {
+
     private final UserServiceImpl users;
+
 
     public Admin(UserServiceImpl users)
     {
@@ -31,11 +36,14 @@ public class Admin implements CommandLineRunner
             admin.setUser("Administrator");
             admin.setRole(Role.ROLE_ADMIN);
             users.guardar(admin);
+
+ 
             System.out.println("Admin decoded password: " + adminp + "\nAdmin info: " + admin);
         }
         List<Users> userss = users.listarTodos();
         for(Users u : userss)
             System.out.println(u.getUser() + ", " + u.getEmail()+ ", " + u.getPassword());
     //547dbd6f-d5f1-45a7-87f9-305e40900072
+
     }
 }
