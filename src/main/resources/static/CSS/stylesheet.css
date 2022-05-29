@@ -1,0 +1,21 @@
+eventos{
+display: flex;
+margin-top: 10px;
+justify-content: center;
+width: auto;
+}
+footer{
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+    width: auto;
+}
+footer p {
+    padding: 10px;
+}
+.enlaces{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background: none;
+}
