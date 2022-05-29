@@ -1,10 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head th:replace="plantilla/techeventsTemplate :: head">
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>HomePage</title>
 </head>
 <body>
+<header th:replace="plantilla/techeventsTemplate::header">
+    <img class="" src="" alt="">
+</header>
+<nav class="menu">
+    <div class="enlaces">
+        <a class="" href="buscar.html">Buscar</a>
+        <a class="" href="miseventos.html">Mis Eventos</a>
+    </div>
+    <div class="iconos">
+        <i class="uil uil-search"></i>
+    </div>
+</nav>
+<section class="eventos">
+    <div class=""><img src="" alt=""></div>
+    <div class=""><img src="" alt=""></div>
+    <div class=""><img src="" alt=""></div>
+</section>
+<section class="eventos">
+    <div class=""><img src="" alt=""></div>
+    <div class=""><img src="" alt=""></div>
+    <div class=""><img src="" alt=""></div>
+    <div class=""><img src="" alt=""></div>
+</section>
+<section class="eventos">
+    <div class=""><img src="" alt=""></div>
+    <div class=""><img src="" alt=""></div>
+    <div class=""><img src="" alt=""></div>
+    <div class=""><img src="" alt=""></div>
+</section>
+<p th:text="${events}"></p>
 
+<footer th:replace="plantilla/techeventsTemplate :: footer">
+    <p>©Copyright</p>
+    <p>Pedir ayuda</p>
+    <p>Registrarse</p>
+</footer>
 </body>
 </html>

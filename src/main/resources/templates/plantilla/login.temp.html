@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="en">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link th:href="@{/CSS/login.css}" rel="stylesheet">
+</head>
+<body>
+<header th:fragment="header">
+    <a th:href="@{/}">
+        <img th:src="@{/images/Logo.png}" alt="Logo de tech events" id="logo">
+    </a>
+    <a th:href="@{/signup}" id="signup">Registrarse</a>
+</header>
+<main th:fragment="main">
+    <form id="loginform" action="#" th:action="@{/login}" method="post">
+        <section id="loginfields">
+            <label class="loginlabel">Email/Usuario</label>
+            <input class="logininput" type="text" name="username">
+            <label class="loginlabel">Contraseña</label>
+            <input class="logininput" type="password" name="password">
+            <label id="loginerror" th:if="${param.error}">Invalid email, username or password</label>
+        </section>
+        <button id="submit">Iniciar</button>
+    </form>
+</main>
+<footer th:fragment="footer">
+    <h4 id="footercopy">&copy;TechEvents</h4>
+    <a id="footerhref" th:href="@{/signup}">
+        <h4 id="footerinit">Registrarse</h4>
+    </a>
+</footer>
+</body>
+</html>
