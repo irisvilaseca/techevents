@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="en">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <title>Signup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link th:href="@{/CSS/signup.css}" rel="stylesheet">
+</head>
+<body>
+<header th:fragment="header">
+    <a th:href="@{/home}">
+        <img th:src="@{/img/Logo.png}" alt="Logo de tech events" id="logo">
+    </a>
+    <a th:href="@{/login}" id="login">Iniciar
+        Sesión</a>
+</header>
+<main th:fragment="main">
+    <form id="signform" action="#" th:action="@{/register}" th:object="${registrarse}" method="post">
+        <section id="signfields">
+            <label class="signlabel">Email</label>
+            <input class="signinput" type="email" th:field="*{email}">
+            <label class="signlabel">Usuario</label>
+            <input class="signinput" type="text" th:field="*{usuario}">
+            <label class="signlabel">Contraseña</label>
+            <input class="signinput" type="password" th:field="*{contrasena}">
+            <label class="signlabel">Repetir Contraseña</label>
+            <input class="signinput" type="password" th:field="*{contrasenaRepetida}">
+            <label id="signerror" th:text="${error}"></label>
+        </section>
+        <button id="submit">Registrar</button>
+    </form>
+</main>
+<footer th:fragment="footer">
+    <h4 id="footercopy">&copy;TechEvents</h4>
+    <a id="footerhref" th:href="@{/login}">
+        <h4 id="footerinit">Iniciar
+            Sesión</h4>
+    </a>
+</footer>
+</body>
+</html>
