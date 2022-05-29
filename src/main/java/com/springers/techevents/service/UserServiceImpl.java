@@ -45,6 +45,11 @@ public class UserServiceImpl implements IUserService, UserDetailsService
         repo.deleteById(id);
     }
 
+
+    public void editar(Users user) {
+    
+    }
+
     public boolean exists(Role role)
     {
         List<Users> users = listarTodos();
@@ -62,5 +67,6 @@ public class UserServiceImpl implements IUserService, UserDetailsService
             if(u.getUser().equals(username) || u.getEmail().equals(username))
                 return u;
         throw new UsernameNotFoundException("No hay ningun usuario con el nombre o email " + username);
+
     }
 }

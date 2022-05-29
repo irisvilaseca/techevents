@@ -46,4 +46,7 @@ public class EventServiceImpl implements IEventService {
     }
 
 
+    public void editar(Events event) {
+    }
+
 }

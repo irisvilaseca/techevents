@@ -23,10 +23,12 @@ public class EventController {
     private EventServiceImpl eventService;
     private UserServiceImpl service;
 
+
     @GetMapping("/events/{eventId}")
     public String loadById(@PathVariable Long eventId, Model model) {
         Events evento1 = eventService.buscarPorId(eventId);
         model.addAttribute("eventoPrueba", evento1);
+
         return "views/events/singleEvent";
     }
 
@@ -46,4 +48,29 @@ public class EventController {
         System.out.println("Evento guardado con éxito!");
         return "redirect:/clientes/";
     }
+
+
+    @GetMapping("/events/delete/{id}")
+    public String eliminar(@PathVariable("id") Long idEvents) {
+
+        eventService.eliminar(idEvents);
+        System.out.println("Evento eliminado con exito");
+        return null;
+    }
+
+    @GetMapping("/events/edit/{id}")
+    public String editar(@PathVariable("id") Long idEvents,@ModelAttribute Events event, Model model){
+
+        model.addAttribute("name","Formulario: Editar Evento");
+        model.addAttribute("date");
+        model.addAttribute("description");
+        model.addAttribute("image");
+        System.out.println("Hubo errores en el formulario");
+        eventService.editar(event);
+        System.out.println("Evento guardado con éxito!");
+        return "redirect:/clientes/"; // falta agregar ruta
+    }
+
+
 }
+

@@ -44,4 +44,6 @@ public class HomeController
         model.addAttribute("raEvents", Math.ceil((float)_events.size() / 4.f));
         return "home";
     }
+
+
 }

@@ -4,8 +4,44 @@
     <title>Home</title>
 </head>
 <body>
-<header th:replace="plantilla/home.temp :: header"></header>
-<main th:replace="plantilla/home.temp :: main"></main>
-<footer th:replace="plantilla/home.temp :: footer"></footer>
+
+<header th:replace="plantilla/template::header">
+    <img class="" src="" alt="">
+</header>
+<nav class="menu">
+    <div class="enlaces">
+        <a class="" href="buscar.html">Buscar</a>
+        <a class="" href="miseventos.html">Mis Eventos</a>
+    </div>
+    <div class="iconos">
+        <i class="uil uil-search"></i>
+    </div>
+</nav>
+<section class="eventos">
+    <div class=""><img src="" alt=""></div>
+    <div class=""><img src="" alt=""></div>
+    <div class=""><img src="" alt=""></div>
+</section>
+<section class="eventos">
+    <div class=""><img src="" alt=""></div>
+    <div class=""><img src="" alt=""></div>
+    <div class=""><img src="" alt=""></div>
+    <div class=""><img src="" alt=""></div>
+</section>
+<section class="eventos">
+    <p th:text="${eventoPrueba.name}">ugfivkjhvkhjvkhvkhvk</p>
+    <div class=""><img src="" alt=""></div>
+    <div class=""><img src="" alt=""></div>
+    <div class=""><img src="" alt=""></div>
+    <div class=""><img src="" alt=""></div>
+</section>
+
+
+<footer th:replace="plantilla/template :: footer">
+    <p>©Copyright</p>
+    <p>Pedir ayuda</p>
+    <p>Registrarse</p>
+</footer>
+
 </body>
 </html>
