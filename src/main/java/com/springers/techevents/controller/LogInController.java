@@ -9,6 +9,6 @@ public class LogInController
     @GetMapping("/login")
     public String load()
     {
-        return "";
+        return "views/login";
     }
 }

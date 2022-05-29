@@ -16,10 +16,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)
 public class Web extends WebSecurityConfigurerAdapter
 {
+
     private AccessDenied denied;
 
     private UserServiceImpl users;
 
+   
     public Web(AccessDenied denied, UserServiceImpl users)
     {
         this.denied = denied;
@@ -41,6 +43,8 @@ public class Web extends WebSecurityConfigurerAdapter
     @Override
     protected void configure(HttpSecurity http) throws Exception
     {
+
         http.csrf().disable().authorizeRequests().antMatchers("/css/**", "/js/**", "/images/**", "/", "/denied", "/register").permitAll().anyRequest().authenticated().and().formLogin().loginPage("/login").defaultSuccessUrl("/").permitAll().and().logout().logoutSuccessUrl("/login").invalidateHttpSession(true).deleteCookies("JSESSIONID").permitAll().and().exceptionHandling().accessDeniedHandler(denied);
+
     }
 }

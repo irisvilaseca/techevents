@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="en">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link th:href="@{/CSS/home.css}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script defer type="text/javascript" th:src="@{/JS/home.js}"></script>
+</head>
+<body>
+<header th:fragment="header">
+    <a th:href="@{/home}">
+        <img th:src="@{/img/Logo.png}" alt="Logo de tech events" id="logo">
+    </a>
+<!--    <section id="search">-->
+<!--        <img th:src="@{/img/Search.png}" alt="Imagen de búsqueda" id="searchimg">-->
+<!--        <input type="text" placeholder="Buscar..." id="searchinput">-->
+<!--    </section>-->
+    <a th:href="@{/events}" sec:authorize="hasRole('ROLE_USER')" id="events">Mis Eventos</a>
+    <a th:href="@{/create}" sec:authorize="hasRole('ROLE_ADMIN')" id="create">Crear</a>
+    <a th:href="@{/logout}" sec:authorize="isAuthenticated()" id="logout">Cerrar Sesión</a>
+    <a th:href="@{/login}" sec:authorize="!isAuthenticated()" id="login">Iniciar
+        Sesión</a>
+    <img th:src="@{/img/Login.png}" sec:authorize="hasRole('ROLE_USER')" class="loginimg">
+    <img th:src="@{/img/LoginAdmin.png}" sec:authorize="hasRole('ROLE_ADMIN')" class="loginimg">
+</header>
+<main th:fragment="main">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner"  >
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img th:src="@{/img/evento1.jpeg}" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img th:src="@{/img/evento2.jpg}" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img th:src="@{/img/evento3.png}" class="d-block w-100" alt="...">
+                </div>
+                </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        </div>
+
+<!--    <div id="eventss" th:style="'margin-right: 1vw; margin-top: 10vh; width: 99vw; display: grid; align-items: center; justify-items: center; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(' + ${raEvents} + ', 1fr);'">-->
+<!--        <div class="event" th:each="eve:${aEvents}">-->
+<!--            <img class="eventimg" th:src="${eve.image}">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div id="eventsp">-->
+<!--        <div class="eventp" th:each="eve:${aEvents}">-->
+<!--            <img class="eventpimg" th:src="${eve.image}">-->
+<!--        </div>-->
+<!--    </div>-->
+</main>
+<footer th:fragment="footer">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar-footer">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav mx-auto d-flex justify-content-center">
+                    <a class="nav-link active" aria-current="page" href="#">&copy; TechEvents</a>
+                    <a class="nav-link" href="#">Pedir ayuda:techevents@gmail.com</a>
+                    <a class="nav-link" href="/register">Registrarse</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
